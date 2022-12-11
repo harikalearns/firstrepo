@@ -1,0 +1,100 @@
+<h2 class="special">the server component </h2>
+{{city}}
+<br>
+<img src={{path}} alt="Independent women">
+<br><br>
+Name: <input type="text">
+<button [disabled]=isdisabled>submit</button>
+<br><br>
+Mobile: <input type="number" [hidden]="ishidden">
+<br><br>
+<h3> Counter: {{counter}}</h3>
+<button (click)="Increment()">Increment</button>
+<button (click)="Decrement()">Decrement</button>
+<input type="text">
+<br><br>
+<p>{{servercreationstatus}}</p>
+<button (click)="oncreateserver()">add server</button>
+<br><br>
+<h2>Name:{{name}}</h2>
+Name:<input type="text" (input)="changename($event)">
+<br><br>
+<input type="text" (input)="onupdateservername($event)">
+<p>name: {{servername}}</p>
+<br><br><br>
+City:<input type="text" [(ngModel)]="city">
+<p>{{city}}</p>
+<button (click)="onupdatecity()">update city</button>
+<br><br><br>
+<p [class]="isactive? 'active' : 'inactive' ">this is niharika</p>
+<br><br>
+<p [class]="['c1' , 'active', 'inactive' ]">this is shashee</p>
+<br>
+
+
+<h2 [style]="{color : cvar}">i love you shahsheee</h2> 
+<br><br>
+<h3 [style]="mystyle">future is unpredictable so dont think about future and past think about present and enjoy every moment</h3>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-5">
+<ol>
+   <li>this is niharika</li>
+   <li>she should be independent</li>
+   <li>should not depend on others</li>
+</ol>
+
+<label>UserName</label>
+<input type="text" class="form-control">
+
+</div>
+</div>
+</div>
+<h1>DIRECTIVS</h1>
+<h2 *ngIf=" showhead ">directivs started</h2>
+<h2 *ngIf="!data;else sample">Loading........</h2>
+<ng-template #sample>
+    {{data}}
+</ng-template>
+<br><br>
+<h1 *ngIf="showmsg;  else showelsemsg">ngIf showmsg</h1>
+<ng-template #showelsemsg> ngIf else showmsg</ng-template>
+<div *ngIf=" showmsg; then showthenmsg; else showelsemsg"></div>
+<ng-template #showthenmsg>show then msg </ng-template>
+<ng-template #showelsemsg> show else msg</ng-template>
+<h2>ng for directive</h2>
+<ul>
+
+    <li *ngFor="let contact of contacts; index as i; first as f; last as l">
+    <div *ngIf="f" style="background-color:aqua">show first record</div>
+    <div *ngIf="l" style="background-color:rgb(241, 88, 234)">show last record</div>
+      <div>
+    {{i}}  {{contact.firstname}}  {{contact.lastname}}
+    </div>
+    </li>
+    </ul>
+
+
+    <h2>learning ngSwitch</h2>
+    <div [ngSwitch]="superpower">
+<div *ngSwitchCase="'spiderman'">display spiderman</div>
+<div *ngSwitchCase="'batman'">display batman</div>
+<div *ngSwitchCase="'ironman'">display ironman</div>
+<div *ngSwitchCase="'snowman'">display snowman</div>
+<div *ngswitchDefault="'superpower is in learning'">display super power is learning</div>
+    </div>
+
+
+    <h2>learning ngStyle</h2>
+    <div [ngStyle]="{'background-color':'blue', 'color':'white'}">setting a value using ngstyle</div>
+    <div [ngStyle]="{'background-color': styleprep}">dynamic value from componet</div>
+    <div [ngStyle]="{'color' : txtcolor === 'red' ? 'red' : 'gray'}">ngStyle with conditional operator</div>
+   
+
+<h2>learning ngclass</h2>
+<div [ngClass]="'c1'">thia is ngclass example</div>
+<div [ngClass]="'c1 c2'">this is ngclass multiple classes example </div>
+
+
+    

@@ -1,0 +1,23 @@
+.special
+{
+    border:3px solid palevioletred;
+}
+.active{
+    background-color: aqua;
+    color:azure;
+    
+}
+.inactive{
+    background-color: blueviolet;
+    color: white;
+}
+.c1{
+    
+    border:2px solid red;
+    
+}
+.c2{
+
+    background-color: aqua;
+    color:black;
+}
